@@ -72,7 +72,7 @@
                     <section class="normal markdown-section">
                         <div id='anchor-navigation-ex-navbar'><i class='fa fa-anchor'></i><ul><li><span class='title-icon fa fa-hand-o-right'></span><a aria-label class='on-toolbar-action' href='' onclick="$('.fa.fa-align-justify').parent()[0].click();">目录</a></li><li><span class='title-icon fa fa-hand-o-right'></span><a href='#anchor_1'><b></b>Selenium 与 浏览器驱动</a></li><ul><li><span class='title-icon fa fa-hand-o-right'></span><a href='#anchor_2'><b>1. </b>忽略本地缓存安装 / 升级 Selenium</a></li><li><span class='title-icon fa fa-hand-o-right'></span><a href='#anchor_3'><b>2. </b>Selenium API docs</a></li><li><span class='title-icon fa fa-hand-o-right'></span><a href='#anchor_4'><b>3. </b>Selenium Standalone Server</a></li><li><span class='title-icon fa fa-hand-o-right'></span><a href='#anchor_5'><b>4. </b>Windows 杀进程</a></li><li><span class='title-icon fa fa-hand-o-right'></span><a href='#anchor_6'><b>5. </b>Selenium Grid</a></li></ul></ul></div><a href='#anchor_1' id='anchorNavigationExGoTop'><i class='fa fa-arrow-up'></i></a>
                         <h1 id="anchor_1"><a name="anchor_1" class="anchor-navigation-ex-anchor" href="#anchor_1"><i class="fa fa-link" aria-hidden="true"></i></a>Selenium 与 浏览器驱动</h1><p><a href="https://www.seleniumhq.org/download/">官方下载地址</a></p>
-<h2 id="anchor_2"><a name="anchor_2" class="anchor-navigation-ex-anchor" href="#anchor_2"><i class="fa fa-link" aria-hidden="true"></i></a>1. 忽略本地缓存安装 / 升级 Selenium</h2><pre class="line-numbers"><code class="lang-bash">pip --no-cache-dir install -U selenium
+<h2 id="anchor_2"><a name="anchor_2" class="anchor-navigation-ex-anchor" href="#anchor_2"><i class="fa fa-link" aria-hidden="true"></i></a>1. 忽略本地缓存安装 / 升级 Selenium</h2><pre class="line-numbers"><code class="lang-batch">pip --no-cache-dir install -U selenium
 </code></pre>
 <h2 id="anchor_3"><a name="anchor_3" class="anchor-navigation-ex-anchor" href="#anchor_3"><i class="fa fa-link" aria-hidden="true"></i></a>2. Selenium API docs</h2><p><a href="http://seleniumhq.github.io/selenium/docs/api/py/index.html">Selenium API docs</a></p>
 <p><a href="https://liushilive.github.io/github_selenium_docs_api_py/">Selenium API docs 翻译</a></p>
@@ -80,26 +80,26 @@
 <li><p><a href="https://npm.taobao.org/mirrors/selenium/3.141/selenium-server-standalone-3.141.59.jar">selenium-server-standalone-3.141.59.jar</a></p>
 </li>
 </ul>
-<h2 id="anchor_5"><a name="anchor_5" class="anchor-navigation-ex-anchor" href="#anchor_5"><i class="fa fa-link" aria-hidden="true"></i></a>4. Windows 杀进程</h2><pre class="line-numbers"><code class="lang-bash">TASKKILL  /IM chrome.exe /f
+<h2 id="anchor_5"><a name="anchor_5" class="anchor-navigation-ex-anchor" href="#anchor_5"><i class="fa fa-link" aria-hidden="true"></i></a>4. Windows 杀进程</h2><pre class="line-numbers"><code class="lang-batch">TASKKILL  /IM chrome.exe /f
 TASKKILL  /IM iexplore.exe /f
 TASKKILL  /IM firefox.exe /f
 TASKKILL  /IM IEDriverServer.exe /f
 TASKKILL  /IM geckodriver.exe /f
 TASKKILL  /IM chromedriver.exe /f
 </code></pre>
-<h2 id="anchor_6"><a name="anchor_6" class="anchor-navigation-ex-anchor" href="#anchor_6"><i class="fa fa-link" aria-hidden="true"></i></a>5. Selenium Grid</h2><pre class="line-numbers"><code class="lang-bash">java -jar selenium-server-standalone-3.141.59.jar
+<h2 id="anchor_6"><a name="anchor_6" class="anchor-navigation-ex-anchor" href="#anchor_6"><i class="fa fa-link" aria-hidden="true"></i></a>5. Selenium Grid</h2><pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar
 </code></pre>
-<pre class="line-numbers"><code class="lang-bash">java -jar selenium-server-standalone-3.141.59.jar -role hub -port 4444
+<pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar -role hub -port 4444
 </code></pre>
-<pre class="line-numbers"><code class="lang-bash">java -jar selenium-server-standalone-3.141.59.jar -role node -hub http://127.0.0.1:4444/grid/register
+<pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar -role node -hub http://127.0.0.1:4444/grid/register
 </code></pre>
-<pre class="line-numbers"><code class="lang-bash">java -jar selenium-server-standalone-3.141.59.jar -role node -maxSession 5 -hub http://127.0.0.1:4444/grid/register
+<pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar -role node -maxSession 5 -hub http://127.0.0.1:4444/grid/register
 </code></pre>
-<pre class="line-numbers"><code class="lang-bash">java -jar selenium-server-standalone-3.141.59.jar -role node -hub http://127.0.0.1:4444/grid/register  -maxSession 100 -browser &quot;browserName=htmlunit,javascriptEnabled=true,version=firefox,maxInstances=100&quot;
+<pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar -role node -hub http://127.0.0.1:4444/grid/register  -maxSession 100 -browser &quot;browserName=htmlunit,javascriptEnabled=true,version=firefox,maxInstances=100&quot;
 </code></pre>
-<pre class="line-numbers"><code class="lang-bash">java -jar selenium-server-standalone-3.141.59.jar -maxSession 100 -role node -hub http://127.0.0.1:4444/grid/register -browser &quot;browserName=chrome,maxInstances=100&quot;
+<pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar -maxSession 100 -role node -hub http://127.0.0.1:4444/grid/register -browser &quot;browserName=chrome,maxInstances=100&quot;
 </code></pre>
-<pre class="line-numbers"><code class="lang-bash">java -jar selenium-server-standalone-3.141.59.jar -maxSession 10 -role node -hub http://127.0.0.1:4444/grid/register -browser browserName=chrome,maxInstances=10 -browser browserName=firefox,maxInstances=10 -browser browserName=&quot;internet explorer&quot;,maxInstances=5
+<pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar -maxSession 10 -role node -hub http://127.0.0.1:4444/grid/register -browser browserName=chrome,maxInstances=10 -browser browserName=firefox,maxInstances=10 -browser browserName=&quot;internet explorer&quot;,maxInstances=5
 </code></pre>
 
                         <footer class="page-footer"><span class="copyright">© 2019 刘士. 
