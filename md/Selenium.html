@@ -87,19 +87,33 @@ TASKKILL  /IM IEDriverServer.exe /f
 TASKKILL  /IM geckodriver.exe /f
 TASKKILL  /IM chromedriver.exe /f
 </code></pre>
-<h2 id="anchor_6"><a name="anchor_6" class="anchor-navigation-ex-anchor" href="#anchor_6"><i class="fa fa-link" aria-hidden="true"></i></a>5. Selenium Grid</h2><pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar
+<h2 id="anchor_6"><a name="anchor_6" class="anchor-navigation-ex-anchor" href="#anchor_6"><i class="fa fa-link" aria-hidden="true"></i></a>5. Selenium Grid</h2><blockquote><p>直接开启服务器</p>
+</blockquote>
+<pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar
 </code></pre>
+<blockquote><p>开启 Hub 服务器</p>
+</blockquote>
 <pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar -role hub -port 4444
 </code></pre>
+<blockquote><p>开启 Node 服务器，注册到 Hub 服务器</p>
+</blockquote>
 <pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar -role node -hub http://127.0.0.1:4444/grid/register
 </code></pre>
+<blockquote><p>开启 Node 服务器，限制总会话 5</p>
+</blockquote>
 <pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar -role node -maxSession 5 -hub http://127.0.0.1:4444/grid/register
 </code></pre>
+<blockquote><p>开启 Node 服务器，指定支持浏览器类型</p>
+</blockquote>
 <pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar -role node -hub http://127.0.0.1:4444/grid/register  -maxSession 100 -browser &quot;browserName=htmlunit,javascriptEnabled=true,version=firefox,maxInstances=100&quot;
 </code></pre>
 <pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar -maxSession 100 -role node -hub http://127.0.0.1:4444/grid/register -browser &quot;browserName=chrome,maxInstances=100&quot;
 </code></pre>
 <pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar -maxSession 10 -role node -hub http://127.0.0.1:4444/grid/register -browser browserName=chrome,maxInstances=10 -browser browserName=firefox,maxInstances=10 -browser browserName=&quot;internet explorer&quot;,maxInstances=5
+</code></pre>
+<blockquote><p>开启 Node 服务器，指定浏览器类型，向 Hub 服务器汇报正确 IP</p>
+</blockquote>
+<pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar -maxSession 10 -role node -hub http://127.0.0.1:4444/grid/register -browser browserName=chrome,maxInstances=10 -browser browserName=firefox,maxInstances=10 -browser browserName=&quot;internet explorer&quot;,maxInstances=5 -host 192.168.2.5
 </code></pre>
 
                         <footer class="page-footer"><span class="copyright">© 2019 刘士. 
