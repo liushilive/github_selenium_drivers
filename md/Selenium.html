@@ -23,7 +23,7 @@
 <link href="IE.html" rel="next"/>
 </head>
 <body>
-<div class="book"><div class="book-summary">
+<div class="book match-braces"><div class="book-summary">
     <div id="book-search-input" role="search">
         <input placeholder="输入并搜索" type="text"/>
     </div>
@@ -64,9 +64,9 @@
                         <h1 id="anchor_1"><a class="anchor-navigation-ex-anchor" href="#anchor_1" name="anchor_1"><i aria-hidden="true" class="fa fa-link"></i></a>Selenium 与 浏览器驱动</h1>
 <p><a href="https://selenium.dev/downloads/">官方下载地址</a></p>
 <h2 id="anchor_2"><a class="anchor-navigation-ex-anchor" href="#anchor_2" name="anchor_2"><i aria-hidden="true" class="fa fa-link"></i></a>1. 忽略本地缓存安装 / 升级 Selenium</h2>
-<pre class="line-numbers"><code class="lang-batch">pip --no-cache-dir install -U selenium
+<pre class="line-numbers"><code class="lang-batch rainbow-braces">pip --no-cache-dir install -U selenium
 </code></pre>
-<pre class="line-numbers"><code class="lang-batch">pip --no-cache-dir install -U selenium -i https://mirrors.aliyun.com/pypi/simple/
+<pre class="line-numbers"><code class="lang-batch rainbow-braces">pip --no-cache-dir install -U selenium -i https://mirrors.aliyun.com/pypi/simple/
 </code></pre>
 <h2 id="anchor_3"><a class="anchor-navigation-ex-anchor" href="#anchor_3" name="anchor_3"><i aria-hidden="true" class="fa fa-link"></i></a>2. Selenium docs</h2>
 <!-- [Selenium API docs](http://seleniumhq.github.io/selenium/docs/api/py/index.html) -->
@@ -77,7 +77,7 @@
 <li><a href="https://npm.taobao.org/mirrors/selenium/3.141/selenium-server-standalone-3.141.59.jar">selenium-server-standalone-3.141.59.jar</a></li>
 </ul>
 <h2 id="anchor_5"><a class="anchor-navigation-ex-anchor" href="#anchor_5" name="anchor_5"><i aria-hidden="true" class="fa fa-link"></i></a>4. Windows 杀进程</h2>
-<pre class="line-numbers"><code class="lang-batch">TASKKILL  /IM chrome.exe /f
+<pre class="line-numbers"><code class="lang-batch rainbow-braces">TASKKILL  /IM chrome.exe /f
 TASKKILL  /IM iexplore.exe /f
 TASKKILL  /IM firefox.exe /f
 TASKKILL  /IM IEDriverServer.exe /f
@@ -88,36 +88,36 @@ TASKKILL  /IM chromedriver.exe /f
 <blockquote>
 <p>直接开启服务器</p>
 </blockquote>
-<pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar
+<pre class="line-numbers"><code class="lang-batch rainbow-braces">java -jar selenium-server-standalone-3.141.59.jar
 </code></pre>
 <blockquote>
 <p>开启 Hub 服务器</p>
 </blockquote>
-<pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar -role hub -port 4444
+<pre class="line-numbers"><code class="lang-batch rainbow-braces">java -jar selenium-server-standalone-3.141.59.jar -role hub -port 4444
 </code></pre>
 <blockquote>
 <p>开启 Node 服务器，注册到 Hub 服务器</p>
 </blockquote>
-<pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar -role node -hub http://127.0.0.1:4444/grid/register
+<pre class="line-numbers"><code class="lang-batch rainbow-braces">java -jar selenium-server-standalone-3.141.59.jar -role node -hub http://127.0.0.1:4444/grid/register
 </code></pre>
 <blockquote>
 <p>开启 Node 服务器，限制总会话 5</p>
 </blockquote>
-<pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar -role node -maxSession 5 -hub http://127.0.0.1:4444/grid/register
+<pre class="line-numbers"><code class="lang-batch rainbow-braces">java -jar selenium-server-standalone-3.141.59.jar -role node -maxSession 5 -hub http://127.0.0.1:4444/grid/register
 </code></pre>
 <blockquote>
 <p>开启 Node 服务器，指定支持浏览器类型</p>
 </blockquote>
-<pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar -role node -hub http://127.0.0.1:4444/grid/register  -maxSession 100 -browser &quot;browserName=htmlunit,javascriptEnabled=true,version=firefox,maxInstances=100&quot;
+<pre class="line-numbers"><code class="lang-batch rainbow-braces">java -jar selenium-server-standalone-3.141.59.jar -role node -hub http://127.0.0.1:4444/grid/register  -maxSession 100 -browser &quot;browserName=htmlunit,javascriptEnabled=true,version=firefox,maxInstances=100&quot;
 </code></pre>
-<pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar -maxSession 100 -role node -hub http://127.0.0.1:4444/grid/register -browser &quot;browserName=chrome,maxInstances=100&quot;
+<pre class="line-numbers"><code class="lang-batch rainbow-braces">java -jar selenium-server-standalone-3.141.59.jar -maxSession 100 -role node -hub http://127.0.0.1:4444/grid/register -browser &quot;browserName=chrome,maxInstances=100&quot;
 </code></pre>
-<pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar -maxSession 10 -role node -hub http://127.0.0.1:4444/grid/register -browser browserName=chrome,maxInstances=10 -browser browserName=firefox,maxInstances=10 -browser browserName=&quot;internet explorer&quot;,maxInstances=5
+<pre class="line-numbers"><code class="lang-batch rainbow-braces">java -jar selenium-server-standalone-3.141.59.jar -maxSession 10 -role node -hub http://127.0.0.1:4444/grid/register -browser browserName=chrome,maxInstances=10 -browser browserName=firefox,maxInstances=10 -browser browserName=&quot;internet explorer&quot;,maxInstances=5
 </code></pre>
 <blockquote>
 <p>开启 Node 服务器，指定浏览器类型，向 Hub 服务器汇报正确 IP</p>
 </blockquote>
-<pre class="line-numbers"><code class="lang-batch">java -jar selenium-server-standalone-3.141.59.jar -maxSession 10 -role node -hub http://127.0.0.1:4444/grid/register -browser browserName=chrome,maxInstances=10 -browser browserName=firefox,maxInstances=10 -browser browserName=&quot;internet explorer&quot;,maxInstances=5 -host 192.168.2.5
+<pre class="line-numbers"><code class="lang-batch rainbow-braces">java -jar selenium-server-standalone-3.141.59.jar -maxSession 10 -role node -hub http://127.0.0.1:4444/grid/register -browser browserName=chrome,maxInstances=10 -browser browserName=firefox,maxInstances=10 -browser browserName=&quot;internet explorer&quot;,maxInstances=5 -host 192.168.2.5
 </code></pre>
 
                         <footer class="page-footer"><span class="copyright">© 2020 刘士. 
